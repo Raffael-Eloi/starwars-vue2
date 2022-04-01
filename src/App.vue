@@ -15,4 +15,8 @@ export default {
 * {
   font-family: 'Roboto', sans-serif;
 }
+
+.center {
+  text-align: center;
+}
 </style>
