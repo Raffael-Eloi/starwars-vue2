@@ -17,5 +17,6 @@ export default {
   justify-content: center;
   box-shadow: 0px 3px 3px 1px gray;
   padding: 1.5rem;
+  border-radius: 5px;
 }
 </style>

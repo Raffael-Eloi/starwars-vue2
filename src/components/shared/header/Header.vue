@@ -46,6 +46,7 @@ export default {
     justify-content: space-between;
     box-shadow: 0px 3px 3px 1px gray;
     padding: 10px;
+    border-radius: 5px;
   }
   
   .header-title {
