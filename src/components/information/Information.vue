@@ -12,7 +12,7 @@
 
       <!-- normal use -->
       <div class="information" v-else>
-        <div class="loading" v-if="allData.length === 0">
+        <div class="loading-page" v-if="allData.length === 0">
           <Loading />
         </div>
 
@@ -53,13 +53,15 @@ import Header from "../shared/header/Header.vue";
 import Footer from "../shared/footer/Footer.vue";
 import Loading from "../shared/loading/Loading.vue";
 import { URL } from "../../baseURL/baseURL";
+import { getIdFromUrl } from "../../assets/utilities/getIdFromURL";
 export default {
   data() {
     return {
       paramsName: this.$route.params.name,
       allData: [],
       URL: URL,
-      errorApi: ""
+      errorApi: "",
+      getIdFromUrl
     };
   },
 
@@ -67,13 +69,6 @@ export default {
     Header,
     Footer,
     Loading
-  },
-
-  methods: {
-    getIdFromUrl(url) {
-      const id = url.length-2;
-      return parseInt(url[id]);
-    }
   },
 
   created() {
@@ -90,7 +85,7 @@ export default {
 </script>
 
 <style scoped>
-.loading {
+.loading-page {
   height: 75vh;
 }
 

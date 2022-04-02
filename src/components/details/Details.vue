@@ -1,13 +1,21 @@
 <template>
   <div>
     <Header />
-    <div class="loading" v-if="detailsData.length === 0">
+    <div class="loading-page" v-if="detailsData.length === 0">
       <Loading />
     </div>
     <div v-else>
-      {{detailsData}}
+      <div class="show-details">
+        <ul v-for="(value, key) in detailsData" v-bind:key="key" class="show-details__list">
+          <img v-if="key !== 'url'" src="https://img.icons8.com/windows/36/000000/empire.png"/>
+          <div v-if="key !== 'url'" class="show-details__list__item">
+            <li v-if="key !== 'url'" class="show-details__list__key">{{formatKey(key)}}</li>
+            <li v-if="key !== 'url'" class="show-details__list__item">{{value}}</li>
+          </div>
+        </ul>
+      </div>
       <div class="search-image">
-        <a :href="getNameForSearch(detailsData.name)" target="_blank" class="search-image__link">
+        <a :href="getNameForSearch(name === 'films' ?  detailsData.title: detailsData.name)" target="_blank" class="search-image__link">
         <div class="search-image__box">
           <h4>Click here to see images of {{detailsData.name}}</h4>
           <img src="https://img.icons8.com/color/36/000000/death-star.png"/>
@@ -26,6 +34,7 @@ import Footer from '../shared/footer/Footer.vue';
 import Loading from "../shared/loading/Loading.vue";
 import { URL } from "../../baseURL/baseURL";
 import { getNameForSearch } from  "../../baseURL/baseURLSearch";
+import { formatKey } from "../../assets/utilities/formatKey";
 
 export default {
   data() {
@@ -34,6 +43,7 @@ export default {
       id: this.$route.params.id,
       detailsData: [],
       getNameForSearch,
+      formatKey
     }
   },
   components: {
@@ -48,7 +58,7 @@ export default {
 </script>
 
 <style scoped>
-.loading {
+.loading-page {
   height: 75vh;
 }
 
@@ -69,6 +79,22 @@ export default {
 .search-image__box {
   display: flex;
   align-items: center;
+}
+
+.show-details__list {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+}
+
+.show-details__list__item {
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+
+.show-details__list__key {
+  font-weight: bold;
+  margin-left: 1rem;
 }
 
 </style>
