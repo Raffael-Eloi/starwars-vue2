@@ -4,6 +4,7 @@ import Home from "@/components/home/Home.vue";
 import Motivation from "@/components/motivation/Motivation.vue";
 import About from "@/components/about/About.vue";
 import Information from "@/components/information/Information.vue";
+import Details from "@/components/details/Details.vue";
 
 Vue.use(Router);
 
@@ -27,5 +28,10 @@ export const routes = [
     path: "/information/:name",
     name: "information",
     component: Information
+  },
+  {
+    path: "/information/:name/:id",
+    name: "details",
+    component: Details
   }
 ];

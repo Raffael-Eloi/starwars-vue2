@@ -3,7 +3,7 @@
     <Header />
     <h1 class="center home-title">Welcome to the star wars info, what do you want to see ?</h1>
     <div class="list-options">
-      <router-link :to="{name: 'information', params: {name: 'planet'}}" class="router-link">
+      <router-link :to="{name: 'information', params: {name: 'planets'}}" class="router-link">
       <div class="planets">
         <img class="image-example" src="../../assets/images/planet-example.jpg" alt="Ilustrative image of a planet in star wars - the planet ilustrated is tatooine">
         <div class="description">
@@ -23,7 +23,7 @@
       </div>
       </router-link>
 
-      <router-link :to="{name: 'information', params: {name: 'characters'}}" class="router-link">
+      <router-link :to="{name: 'information', params: {name: 'people'}}" class="router-link">
       <div class="characters">
         <img class="image-example" src="../../assets/images/character-example.jpg" alt="Ilustrative image of the character Darth Vader">
         <div class="description">
@@ -80,8 +80,8 @@ export default {
     border: 4px solid #e6aa14;
     border-radius: 5px;
     padding: 0.5rem;
-    height: 200px;
-    width: 350px;
+    height: 210px;
+    width: 335px;
     margin-bottom: 1rem;
   }
   
@@ -99,8 +99,8 @@ export default {
     border: 4px solid #e6aa14;
     border-radius: 5px;
     padding: 0.5rem;
-    height: 200px;
-    width: 350px;
+    height: 210px;
+    width: 335px;
     margin-bottom: 1rem;
   }
 
@@ -109,8 +109,8 @@ export default {
     border: 4px solid #e6aa14;
     border-radius: 5px;
     padding: 0.5rem;
-    height: 200px;
-    width: 350px;
+    height: 210px;
+    width: 335px;
     margin-bottom: 1rem;
   }
 

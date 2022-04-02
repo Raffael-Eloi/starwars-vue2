@@ -41,7 +41,11 @@ export default {
     justify-content: space-between;
     box-shadow: 0px 3px 3px 1px gray;
     padding: 10px;
-    border-radius: 5px;
+    background-image: url(https://olhardigital.com.br/wp-content/uploads/2021/02/star-wars.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #f0f0f0;
+    text-shadow: 4px 3px 4px black;
   }
   
   .header-title {

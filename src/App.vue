@@ -16,6 +16,10 @@ export default {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 .center {
   text-align: center;
 }
