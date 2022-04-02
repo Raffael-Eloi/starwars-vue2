@@ -31,11 +31,6 @@ export default {
 </script>
 
 <style scoped>
-.router-link{
-    text-decoration: none;
-    color: inherit;
-  }
-  
   .router-link:hover{
    color:#e6aa14;
   }

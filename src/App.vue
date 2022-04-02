@@ -19,4 +19,9 @@ export default {
 .center {
   text-align: center;
 }
+
+.router-link{
+    text-decoration: none;
+    color: inherit;
+  }
 </style>

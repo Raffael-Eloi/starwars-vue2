@@ -3,6 +3,7 @@
     <Header />
     <h1 class="center home-title">Welcome to the star wars info, what do you want to see ?</h1>
     <div class="list-options">
+      <router-link :to="{name: 'information', params: {name: 'planet'}}" class="router-link">
       <div class="planets">
         <img class="image-example" src="../../assets/images/planet-example.jpg" alt="Ilustrative image of a planet in star wars - the planet ilustrated is tatooine">
         <div class="description">
@@ -10,6 +11,9 @@
           <img class="image-ilustrative" src="https://img.icons8.com/cotton/64/000000/mars-planet.png"/>
         </div>
       </div>
+      </router-link>
+
+      <router-link :to="{name: 'information', params: {name: 'films'}}" class="router-link">
       <div class="films">
         <img class="image-example" src="../../assets/images/film-example.jpg" alt="Ilustrative image of a filme in star wars with a lot of characters in the image">
         <div class="description">
@@ -17,6 +21,9 @@
           <img class="image-ilustrative" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-movie-movie-theater-flaticons-lineal-color-flat-icons-7.png"/>
         </div>
       </div>
+      </router-link>
+
+      <router-link :to="{name: 'information', params: {name: 'characters'}}" class="router-link">
       <div class="characters">
         <img class="image-example" src="../../assets/images/character-example.jpg" alt="Ilustrative image of the character Darth Vader">
         <div class="description">
@@ -24,6 +31,7 @@
           <img class="image-ilustrative" src="https://img.icons8.com/color/64/000000/r2-d2.png"/>
         </div>
       </div>
+      </router-link>
     </div>
     <!-- <ul v-for="movie in starwarsMovies" v-bind:key="movie.title">
       <li v-if="starwarsMovies">{{movie.title}}</li>
@@ -44,11 +52,11 @@ export default {
   components: {
     Header, Footer
   },
-  created() {
-      fetch('https://swapi.dev/api/films')
-      .then(response => response.json())
-      .then(data => this.starwarsMovies = data.results)
-    }
+  // created() {
+  //     fetch('https://swapi.dev/api/films')
+  //     .then(response => response.json())
+  //     .then(data => this.starwarsMovies = data.results)
+  //   }
   }
 </script>
 
