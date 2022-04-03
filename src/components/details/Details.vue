@@ -7,10 +7,11 @@
     <div v-else>
       <div class="show-details">
         <ul v-for="(value, key) in detailsData" v-bind:key="key" class="show-details__list">
-          <img v-if="key !== 'url'" src="https://img.icons8.com/windows/36/000000/empire.png"/>
-          <div v-if="key !== 'url'" class="show-details__list__item">
-            <li v-if="key !== 'url'" class="show-details__list__key">{{formatKey(key)}}</li>
-            <li v-if="key !== 'url'" class="show-details__list__item">{{value}}</li>
+          <img v-show="verifyListCondition(key, value)"  src="https://img.icons8.com/windows/36/000000/empire.png"/>
+          <div v-show="verifyListCondition(key, value)" class="show-details__list__item">
+            <li v-show="verifyListCondition(key, value)" class="show-details__list__key">{{formatKey(key)}}</li>
+            <li v-show="verifyListCondition(key, value)" class="show-details__list__item"
+            >{{arrayOfUrl.includes(key) ? showValuesFormated(value, key) : value}}</li>
           </div>
         </ul>
       </div>
@@ -35,6 +36,7 @@ import Loading from "../shared/loading/Loading.vue";
 import { URL } from "../../baseURL/baseURL";
 import { getNameForSearch } from  "../../baseURL/baseURLSearch";
 import { formatKey } from "../../assets/utilities/formatKey";
+import { arrayOfUrl } from "../../assets/utilities/arrayOfUrl";
 
 export default {
   data() {
@@ -43,11 +45,74 @@ export default {
       id: this.$route.params.id,
       detailsData: [],
       getNameForSearch,
-      formatKey
+      formatKey,
+      arrayOfUrl,
+      allUrlItems: []
     }
   },
   components: {
     Header, Footer, Loading
+  },
+
+  methods: {
+    verifyExistenceOfValue(key, value) {
+      let isValid = true;
+      if (this.allUrlItems.length !== 0) {
+        this.allUrlItems.forEach(
+          item => {
+            if (item.id === key && item.description === value) isValid = false;
+          }
+        );
+        return isValid;
+      } else {
+        return isValid;
+      }
+    },
+
+    getValuesFromUrlList(arrayValue, key) {
+        if(arrayValue.length !== 0) {
+          arrayValue.forEach(
+            url => fetch(url)
+            .then(response => response.json())
+            .then(data => {
+              if (data.name !== undefined && this.verifyExistenceOfValue(key, data.name)) {
+                this.allUrlItems.push({id: key, description: data.name})
+              } else if (this.verifyExistenceOfValue(key, data.title)) {
+                this.allUrlItems.push({id: key, description: data.title})
+              }
+            }) 
+          );
+          return this.allUrlItems
+      }
+    },
+
+    showValuesFormated(value, key) {
+      if (typeof(value) === "string") {
+        const array = [value];
+        console.log(array);
+        this.getValuesFromUrlList(array, key);
+
+      } else {
+        this.getValuesFromUrlList(value, key);
+
+      }
+      if (this.allUrlItems.length !== 0) {
+        const arrayValueFormated = [];
+        this.allUrlItems.forEach(
+          item => {
+            if (item.id === key && item.description !== undefined) arrayValueFormated.push(item.description)
+            }
+        );
+        return arrayValueFormated;
+      }
+    },
+
+    verifyListCondition(key, value) {
+      let isValid = true;
+      if (key === 'url' || value.length === 0) isValid = false;
+      return isValid;
+    } 
+
   },
   created() {
     fetch(`${URL}${this.name}/${this.id}`)

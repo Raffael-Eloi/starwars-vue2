@@ -66,7 +66,7 @@ export default {
   }
 @media screen and (max-width: 500px) {
   .home-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .list-options {
@@ -80,8 +80,8 @@ export default {
     border: 4px solid #e6aa14;
     border-radius: 5px;
     padding: 0.5rem;
-    height: 210px;
-    width: 335px;
+    height: 215px;
+    width: 350px;
     margin-bottom: 1rem;
   }
   
@@ -99,8 +99,8 @@ export default {
     border: 4px solid #e6aa14;
     border-radius: 5px;
     padding: 0.5rem;
-    height: 210px;
-    width: 335px;
+    height: 215px;
+    width: 350px;
     margin-bottom: 1rem;
   }
 
@@ -109,8 +109,8 @@ export default {
     border: 4px solid #e6aa14;
     border-radius: 5px;
     padding: 0.5rem;
-    height: 210px;
-    width: 335px;
+    height: 215px;
+    width: 350px;
     margin-bottom: 1rem;
   }
 
