@@ -34,8 +34,27 @@ export default {
   color: white;
   text-shadow: 4px 3px 4px black;
 }
+@media screen and (min-width: 1200px) {
+  .footer {
+    font-size: 1.3rem;
+  }
 
-@media screen and (min-width: 1100px) {
+  .author {
+    cursor: pointer;
+  }
+
+  .social-media__image {
+    height: 45px;
+    width: 45px;
+  }
+
+  .social-media__image:hover {
+    box-shadow: 6px 6px 6px #f0f0f0;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
   .footer {
     font-size: 1.4rem;
   }

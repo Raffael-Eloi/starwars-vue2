@@ -79,16 +79,29 @@ export default {
   .planets, .films, .characters{
     display: flex;
     border: 4px solid #e6aa14;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 0.5rem;
     height: 215px;
     width: 325px;
     margin-bottom: 1rem;
+    transition: 600ms;
+  }
+
+  .planets:hover, .films:hover, .characters:hover {
+    background-image: url(https://i.pinimg.com/originals/f3/8e/41/f38e413a04321ed0f6b848568ddc2650.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #f0f0f0;
   }
   
   .image-example {
     height: 100%;
     width: 50%;
+  }
+
+  .image-example:hover {
+    transition: 600ms;
+    opacity: 0.3;
   }
 
   .image-ilustrative {
@@ -107,13 +120,14 @@ export default {
     align-items: center;
   }
 
-  .planets {
+  .planets, .films, .characters {
     display: flex;
     border: 4px solid #e6aa14;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 0.5rem;
     height: 215px;
     width: 325px;
+    transition: 600ms;
     margin-bottom: 1rem;
   }
   
@@ -126,28 +140,55 @@ export default {
     margin-left: 30%;
   }
 
-  .films {
-    display: flex;
-    border: 4px solid #e6aa14;
-    border-radius: 5px;
-    padding: 0.5rem;
-    height: 215px;
-    width: 325px;
-    margin-bottom: 1rem;
+  .image-example:hover {
+    transition: 600ms;
+    opacity: 0.3;
   }
 
-  .characters {
+  .planets:hover, .films:hover, .characters:hover {
+    background-image: url(https://i.pinimg.com/originals/f3/8e/41/f38e413a04321ed0f6b848568ddc2650.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #f0f0f0;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .initial-message {
+    margin-top: 3rem;
+  }
+
+  .home-title {
+    font-size: 1.5rem;
+  }
+
+  .list-options {
     display: flex;
-    border: 4px solid #e6aa14;
-    border-radius: 5px;
-    padding: 0.5rem;
-    height: 215px;
-    width: 325px;
-    margin-bottom: 1rem;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 65vh;
+  }
+
+  .image-example:hover {
+    transition: 600ms;
+    opacity: 0.3;
+  }
+
+  .planets, .films, .characters {
+    height: 300px;
+    width: 400px;
+    transition: 600ms;
+    border-radius: 15px;
+  }
+
+  .planets:hover, .films:hover, .characters:hover {
+    background-image: url(https://i.pinimg.com/originals/f3/8e/41/f38e413a04321ed0f6b848568ddc2650.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #f0f0f0;
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1500px) {
   .initial-message {
     margin-top: 3rem;
   }
@@ -160,7 +201,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 65vh;
+    height: 62vh;
   }
 
   .image-example {
@@ -169,6 +210,7 @@ export default {
   }
 
   .image-example:hover {
+    transition: 600ms;
     opacity: 0.3;
   }
 

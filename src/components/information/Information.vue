@@ -96,6 +96,13 @@ export default {
 .list {
   display: flex;
   align-items: center;
+  transition: 650ms;
+}
+
+
+.list:hover {
+ border-radius: 15px;
+ background-color: #e6aa14;
 }
 
 .list__description {
