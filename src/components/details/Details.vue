@@ -10,8 +10,13 @@
           <img v-show="verifyListCondition(key, value)"  src="https://img.icons8.com/windows/36/000000/empire.png"/>
           <div v-show="verifyListCondition(key, value)" class="show-details__list__item">
             <li v-show="verifyListCondition(key, value)" class="show-details__list__key">{{formatKey(key)}}</li>
-            <li v-show="verifyListCondition(key, value)" class="show-details__list__item"
-            >{{arrayOfUrl.includes(key) ? showValuesFormated(value, key) : value}}</li>
+            <li v-show="verifyListCondition(key, value)" class="show-details__list__item" v-if="arrayOfUrl.includes(key) ? showValuesFormated(value, key) : null">
+              <ul v-for="item in allUrlItems" v-bind:key="item.id">
+                <li v-show="item.id === key && item.description !== undefined">{{item.description}}</li>
+              </ul>
+            </li>
+            <li v-show="verifyListCondition(key, value)" class="show-details__list__item" v-else
+            >{{value}}</li>
           </div>
         </ul>
       </div>
@@ -109,7 +114,7 @@ export default {
 
     verifyListCondition(key, value) {
       let isValid = true;
-      if (key === 'url' || value.length === 0) isValid = false;
+      if (key === 'url' || key === 'episode_id' || key === 'created' || key === 'edited' || value.length === 0) isValid = false;
       return isValid;
     } 
 
@@ -160,6 +165,24 @@ export default {
 .show-details__list__key {
   font-weight: bold;
   margin-left: 1rem;
+}
+
+.search-image {
+  transition: 600ms;
+}
+.search-image:hover {
+ background-color: #e6aa14;
+ cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+  .search-image {
+   background-color: #e6aa14;
+  }
+
+  .search-image:hover {
+    color: #f0f0f0;
+  }
 }
 
 </style>

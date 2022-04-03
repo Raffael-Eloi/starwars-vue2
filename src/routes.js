@@ -30,6 +30,11 @@ export const routes = [
     component: Information
   },
   {
+    path: "/information/:name??page=:page",
+    name: "next-page",
+    component: Information
+  },
+  {
     path: "/information/:name/:id",
     name: "details",
     component: Details
