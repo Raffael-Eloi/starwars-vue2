@@ -1,15 +1,15 @@
 <template>
   <footer class="footer">
-    <h4>Made by <span class="yellow-color">Raffael Eloi</span></h4>
+    <h4 class="author">Made by Raffael Eloi</h4>
     <div class="social-media">
       <a href="https://github.com/Raffael-Eloi" target="_blank">
-        <img src="https://img.icons8.com/ios-filled/35/000000/github.png"/>
+        <img class="social-media__image" src="https://img.icons8.com/ios-filled/35/000000/github.png"/>
       </a>
       <a href="https://www.linkedin.com/in/raffael-eloi/" target="_blank">
-        <img src="https://img.icons8.com/fluency/36/000000/linkedin.png"/>
+        <img class="social-media__image" src="https://img.icons8.com/fluency/36/000000/linkedin.png"/>
       </a>
       <a href="mailto:raffaeleloi121@gmail.com" target="_blank">
-        <img src="https://img.icons8.com/fluency/36/000000/gmail.png"/>
+        <img class="social-media__image" src="https://img.icons8.com/fluency/36/000000/gmail.png"/>
       </a>
     </div>
   </footer>
@@ -35,4 +35,23 @@ export default {
   text-shadow: 4px 3px 4px black;
 }
 
+@media screen and (min-width: 1100px) {
+  .footer {
+    font-size: 1.4rem;
+  }
+
+  .author {
+    cursor: pointer;
+  }
+
+  .social-media__image {
+    height: 60px;
+    width: 60px;
+  }
+
+  .social-media__image:hover {
+    box-shadow: 8px 8px 8px #f0f0f0;
+    border-radius: 5px;
+  }
+}
 </style>

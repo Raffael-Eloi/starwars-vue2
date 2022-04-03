@@ -1,6 +1,6 @@
 <template>
 <div class="header">
-  <router-link :to="{name: 'home'}" class="router-link"><h3 class="header-title">Star wars with Vue</h3></router-link>
+  <router-link :to="{name: 'home'}" class="router-link"><h3 class="header-title">Star wars with Vue.js</h3></router-link>
   <nav class="menu-mobile">
     <ul class="menu-mobile-list">
       <li class="menu-mobile-list__item">-</li>
@@ -57,7 +57,7 @@ export default {
    color:#e6aa14;
   }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
 
   .menu-mobile {
     display: block;
@@ -101,6 +101,27 @@ export default {
   }
 }
 
+@media screen and (min-width: 520px) {
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu-list {
+    display: flex;
+  }
+  
+  .menu-list__item {
+    list-style: none;
+    padding: 5px;
+    margin-right: 1rem;
+    text-shadow: 4px 3px 4px black;
+  }
+  
+  .menu-list__item {
+    cursor: pointer;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .menu-mobile {
     display: none;
@@ -118,6 +139,20 @@ export default {
   
   .menu-list__item {
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .header-title {
+    margin-left: 10rem;
+  }
+
+  .menu {
+    margin-right: 10rem;
+  }
+
+  .menu-list {
+    font-size: 1.2rem;
   }
 }
 

@@ -1,7 +1,10 @@
 <template>
   <div>
     <Header />
-    <h1 class="center home-title">Welcome to the star wars info, what do you want to see ?</h1>
+    <div class="initial-message">
+      <h1 class="center home-title">Welcome to the star wars info.</h1>
+      <h1 class="center home-title">What do you want to see ?</h1>
+    </div>
     <div class="list-options">
       <router-link :to="{name: 'information', params: {name: 'planets'}}" class="router-link">
       <div class="planets">
@@ -33,9 +36,6 @@
       </div>
       </router-link>
     </div>
-    <!-- <ul v-for="movie in starwarsMovies" v-bind:key="movie.title">
-      <li v-if="starwarsMovies">{{movie.title}}</li>
-    </ul> -->
     <Footer />
   </div>
 </template>
@@ -62,9 +62,41 @@ export default {
 
 <style scoped>
 .list-options img {
-    border-radius: 5px;
+    border-radius: 60%;
   }
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 520px) {
+  .home-title {
+    font-size: 1.3rem;
+  }
+  
+  .list-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .planets, .films, .characters{
+    display: flex;
+    border: 4px solid #e6aa14;
+    border-radius: 5px;
+    padding: 0.5rem;
+    height: 215px;
+    width: 325px;
+    margin-bottom: 1rem;
+  }
+  
+  .image-example {
+    height: 100%;
+    width: 50%;
+  }
+
+  .image-ilustrative {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (min-width: 520px) {
   .home-title {
     font-size: 1.3rem;
   }
@@ -81,7 +113,7 @@ export default {
     border-radius: 5px;
     padding: 0.5rem;
     height: 215px;
-    width: 350px;
+    width: 325px;
     margin-bottom: 1rem;
   }
   
@@ -100,7 +132,7 @@ export default {
     border-radius: 5px;
     padding: 0.5rem;
     height: 215px;
-    width: 350px;
+    width: 325px;
     margin-bottom: 1rem;
   }
 
@@ -110,16 +142,52 @@ export default {
     border-radius: 5px;
     padding: 0.5rem;
     height: 215px;
-    width: 350px;
+    width: 325px;
     margin-bottom: 1rem;
   }
-
 }
 
 @media screen and (min-width: 1100px) {
+  .initial-message {
+    margin-top: 3rem;
+  }
+
+  .home-title {
+    font-size: 1.5rem;
+  }
+  
   .list-options {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
+    height: 65vh;
+  }
+
+  .image-example {
+    height: 100%;
+    width: 65%;
+  }
+
+  .image-example:hover {
+    opacity: 0.3;
+  }
+
+  .planets, .films, .characters { 
+    height: 400px;
+    width: 450px;
+    transition: 600ms;
+    border-radius: 15px;
+  }
+
+  .image-ilustrative {
+    margin-top: 90%;
+  }
+
+  .planets:hover, .films:hover, .characters:hover {
+    background-image: url(https://i.pinimg.com/originals/f3/8e/41/f38e413a04321ed0f6b848568ddc2650.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #f0f0f0;
   }
 }
 </style>
