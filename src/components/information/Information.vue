@@ -44,12 +44,11 @@
         </div>
         <div class="pagination" v-show="next !== null">
           <router-link v-if="next !== null" class="router-link" :to="{name: 'next-page', params:{name: paramsName, page: getIdFromUrl(next)}}">
-            <button class="pagination__button" @click="refreshPage()">Next page</button>
+            <button class="pagination__button" @click="refreshPage(getIdFromUrl(next))">Next page</button>
           </router-link>
         </div>
       </div>
     </div>
-    {{next}}
     <Footer />
   </div>
 </template>
@@ -74,7 +73,19 @@ export default {
   },
 
   methods: {
-    refreshPage() {
+    refreshPage(page) {
+    this.allData = [];
+    fetch(`${URL}/${this.paramsName}/?page=${page}`)
+    .then(response => response.json())
+    .then(
+      data => {
+        this.allData = data.results
+        this.next = data.next
+      },
+      error => {
+        this.errorApi = "Há um problema com a API, por favor, tente mais tarde."
+        throw new Error(error)
+      })
     }
   },
 
