@@ -2,14 +2,15 @@
   <div class="credits">
     <Header />
     <div class="credits-body">
-      <h2 class="credits-body__title center">Motivation of the project</h2>
+      <h2 class="credits-body__title center">Credits of the project</h2>
       <h4 class="credits-body__description">
-        The motivation was the practise of the skills learned on Vue.js, so I needed to apply the concepts on small but real project. <br />
-        The initial idea was just build an application that I could use an existent API to list things and to use methods, components, and resources of the Vue.js and resources os css like reponsiviness, position, flexbox, alignment and others.<br />
+        For all the icons of the project I used the website <a href="https://icons8.com/">icons8</a>.
+      </h4>
+      <h4 class="credits-body__description">
+        For the API of the project I used the website <a href="https://swapi.dev/">swapi dev</a>.
       </h4>
       <div class="credits-body__image">
-        <img class="credits-body__image__item" src="https://img.icons8.com/fluency/150/000000/laptop-coding.png"/>
-        <img class="credits-body__image__item" src="https://img.icons8.com/color/100/000000/vue-js.png"/>
+        <img src="https://img.icons8.com/external-line-rakhmat-setiawan/100/000000/external-communication-thanksgiving-line-line-rakhmat-setiawan.png"/>
       </div>
     </div>
     <BackToHome />

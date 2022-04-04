@@ -17,7 +17,10 @@
         <router-link :to="{name: 'motivation'}" class="router-link">Motivation</router-link>
       </li>
       <li class="menu-list__item">
-        <router-link :to="{name: 'about'}" class="router-link">About</router-link>
+        <router-link :to="{name: 'about'}" class="router-link">About me</router-link>
+      </li>
+      <li class="menu-list__item">
+        <router-link :to="{name: 'credits'}" class="router-link">Credits</router-link>
       </li>
     </ul>
   </nav>

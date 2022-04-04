@@ -29,6 +29,7 @@
         </ul>
       </div>
     </div>
+    <BackToHome />
     <Footer />
   </div>
 </template>
@@ -36,9 +37,10 @@
 <script>
 import Header from '../shared/header/Header.vue';
 import Footer from '../shared/footer/Footer.vue';
+import BackToHome from '../shared/backtohome/BackToHome.vue';
 export default {
   components: {
-    Header, Footer
+    Header, Footer, BackToHome
   },
 }
 </script>

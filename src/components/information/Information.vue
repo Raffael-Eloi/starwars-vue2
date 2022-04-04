@@ -11,7 +11,7 @@
       </div>
 
       <!-- normal use -->
-      <div class="information" v-else>
+      <div :class="paramsName === 'films' ? 'information information-movie': 'information'" v-else>
         <div class="loading-page" v-if="allData.length === 0">
           <Loading />
         </div>
@@ -42,7 +42,7 @@
             </router-link>
           </ul>
         </div>
-        <div class="pagination" v-show="next !== null">
+        <div class="pagination" v-show="next !== null && allData.length !== 0">
           <router-link v-if="next !== null" class="router-link" :to="{name: 'next-page', params:{name: paramsName, page: getIdFromUrl(next)}}">
             <button class="pagination__button" @click="refreshPage(getIdFromUrl(next))">Next page</button>
           </router-link>
@@ -116,6 +116,10 @@ export default {
   height: 75vh;
 }
 
+.information-movie {
+    height: 80vh;
+  }
+
 .errorAPI {
   height: 75vh;
 }
@@ -126,7 +130,6 @@ export default {
   transition: 650ms;
  border-radius: 15px;
 }
-
 
 .list:hover {
  border-radius: 15px;
@@ -161,6 +164,12 @@ export default {
   background-color: #b48306;
   box-shadow: 2px 2px 2px gray;
   color: #333;
+}
+
+@media screen and (min-width: 1200px) {
+  .information-movie {
+    height: 75vh;
+  }
 }
 
 </style>
