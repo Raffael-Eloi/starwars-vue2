@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Header />
+    <Header :showMenu="showMenu" :showHiddenMenu="showHiddenMenu" />
+    <Menu v-show="smallScreenSize && showMenu"/>
     <div class="body-information">
       <!-- In case of error -->
       <div v-if="errorApi" class="errorAPI">
@@ -56,6 +57,7 @@
 <script>
 import Header from "../shared/header/Header.vue";
 import Footer from "../shared/footer/Footer.vue";
+import Menu from '../shared/menu/Menu.vue';
 import Loading from "../shared/loading/Loading.vue";
 import { URL } from "../../baseURL/baseURL";
 import { getIdFromUrl } from "../../assets/utilities/getIdFromURL";
@@ -68,6 +70,8 @@ export default {
       URL: URL,
       errorApi: "",
       getIdFromUrl,
+      smallScreenSize: false,
+      showMenu: false,
       next: [],
     };
   },
@@ -86,16 +90,23 @@ export default {
         this.errorApi = "Há um problema com a API, por favor, tente mais tarde."
         throw new Error(error)
       })
+    },
+
+    showHiddenMenu() {
+      this.showMenu = !this.showMenu;
     }
   },
 
   components: {
     Header,
     Footer,
+    Menu,
     Loading
   },
 
   created() {
+    if (window.screen.width < 520) this.smallScreenSize = true;
+    
     fetch(`${URL}/${this.paramsName}${this.paramsPage !== undefined ? `/?page=${this.paramsPage}` : ''}`)
     .then(response => response.json())
     .then(
@@ -107,6 +118,7 @@ export default {
         this.errorApi = "Há um problema com a API, por favor, tente mais tarde."
         throw new Error(error)
       })
+    
   }
 };
 </script>

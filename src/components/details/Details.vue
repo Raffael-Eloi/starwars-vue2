@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Header />
+    <Header :showMenu="showMenu" :showHiddenMenu="showHiddenMenu" />
+    <Menu v-show="smallScreenSize && showMenu"/>
     <div class="loading-page" v-if="detailsData.length === 0">
       <Loading />
     </div>
@@ -11,7 +12,7 @@
           <div v-show="verifyListCondition(key, value)" class="show-details__list__item">
             <li v-show="verifyListCondition(key, value)" class="show-details__list__key">{{formatKey(key)}}</li>
             <li v-show="verifyListCondition(key, value)" class="show-details__list__item" v-if="arrayOfUrl.includes(key) ? showValuesFormated(value, key) : null">
-              <ul v-for="item in allUrlItems" v-bind:key="item.id">
+              <ul v-for="item in allUrlItems" v-bind:key="item.value">
                 <li v-show="item.id === key && item.description !== undefined">{{item.description}}</li>
               </ul>
             </li>
@@ -37,6 +38,7 @@
 <script>
 import Header from '../shared/header/Header.vue';
 import Footer from '../shared/footer/Footer.vue';
+import Menu from '../shared/menu/Menu.vue';
 import Loading from "../shared/loading/Loading.vue";
 import { URL } from "../../baseURL/baseURL";
 import { getNameForSearch } from  "../../baseURL/baseURLSearch";
@@ -52,11 +54,13 @@ export default {
       getNameForSearch,
       formatKey,
       arrayOfUrl,
-      allUrlItems: []
+      allUrlItems: [],
+      smallScreenSize: false,
+      showMenu: false
     }
   },
   components: {
-    Header, Footer, Loading
+    Header, Footer, Menu, Loading
   },
 
   methods: {
@@ -116,10 +120,16 @@ export default {
       let isValid = true;
       if (key === 'url' || key === 'episode_id' || key === 'created' || key === 'edited' || value.length === 0) isValid = false;
       return isValid;
-    } 
+    },
+
+    showHiddenMenu() {
+      this.showMenu = !this.showMenu;
+    }
 
   },
   created() {
+    if (window.screen.width < 520) this.smallScreenSize = true;
+
     fetch(`${URL}${this.name}/${this.id}`)
     .then(response => response.json())
     .then(data => this.detailsData = data);

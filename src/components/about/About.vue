@@ -1,6 +1,7 @@
 <template>
   <div class="about">
-    <Header />
+    <Header :showMenu="showMenu" :showHiddenMenu="showHiddenMenu" />
+    <Menu v-show="smallScreenSize && showMenu"/>
     <div class="about-body">
       <img class="about-body__image"  src="../../assets/images/me.jpeg" alt="Image of me with a seated on the chair using a headset">
       <div class="about-body__description">
@@ -37,11 +38,29 @@
 <script>
 import Header from '../shared/header/Header.vue';
 import Footer from '../shared/footer/Footer.vue';
+import Menu from '../shared/menu/Menu.vue';
 import BackToHome from '../shared/backtohome/BackToHome.vue';
 export default {
-  components: {
-    Header, Footer, BackToHome
+  data() {
+    return {
+      smallScreenSize: false,
+      showMenu: false
+    }
   },
+
+  components: {
+    Header, Footer, Menu, BackToHome
+  },
+
+  methods: {
+    showHiddenMenu() {
+      this.showMenu = !this.showMenu;
+    }
+  },
+
+  created() {
+    if (window.screen.width < 520) this.smallScreenSize = true;
+  }
 }
 </script>
 

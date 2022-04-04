@@ -66,9 +66,7 @@ export default {
   },
 
   created() {
-    if (window.screen.width < 520) {
-      this.smallScreenSize = true;
-    }
+    if (window.screen.width < 520) this.smallScreenSize = true;
   }
 }
 </script>

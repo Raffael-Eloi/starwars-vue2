@@ -1,6 +1,7 @@
 <template>
   <div class="credits">
-    <Header />
+    <Header :showMenu="showMenu" :showHiddenMenu="showHiddenMenu"/>
+    <Menu v-show="smallScreenSize && showMenu"/>
     <div class="credits-body">
       <h2 class="credits-body__title center">Motivation of the project</h2>
       <h4 class="credits-body__description">
@@ -20,11 +21,29 @@
 <script>
 import Header from '../shared/header/Header.vue';
 import Footer from '../shared/footer/Footer.vue';
+import Menu from '../shared/menu/Menu.vue';
 import BackToHome from '../shared/backtohome/BackToHome.vue';
 
 export default {
+  data() {
+    return {
+      smallScreenSize: false,
+      showMenu: false
+    }
+  },
+
   components: {
-    Header, Footer, BackToHome
+    Header, Footer, Menu, BackToHome
+  },
+
+  methods: {
+    showHiddenMenu() {
+      this.showMenu = !this.showMenu;
+    }
+  },
+
+  created() {
+    if (window.screen.width < 520) this.smallScreenSize = true;
   }
 }
 </script>
