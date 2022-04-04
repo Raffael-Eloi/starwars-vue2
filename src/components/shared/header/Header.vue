@@ -1,7 +1,7 @@
 <template>
 <div class="header">
   <router-link :to="{name: 'home'}" class="router-link"><h3 class="header-title">Star wars with Vue.js</h3></router-link>
-  <nav class="menu-mobile">
+  <nav class="menu-mobile" @click="showHiddenMenu()">
     <ul class="menu-mobile-list">
       <li class="menu-mobile-list__item">-</li>
       <li class="menu-mobile-list__item">-</li>
@@ -28,8 +28,22 @@
 </template>
 
 <script>
+
 export default {
-  
+  props: {
+    showMenu: {
+      type: Boolean
+    },
+    showHiddenMenu: {
+      type: Function
+    }
+  },
+
+  // methods: {
+  //   showHiddenMenu() {
+  //     this.showMenu = !this.showMenu;
+  //   }
+  // }
 }
 </script>
 
@@ -67,10 +81,6 @@ export default {
     margin-right: 1rem;
   }
 
-  .menu-mobile:active {
-    display: none;
-  }
-
   .menu-mobile-list {
     list-style-type: none;
   }
@@ -84,7 +94,7 @@ export default {
     width: 35px;
     border-radius: 10px;
   }
-  
+
   .menu {
     display: none;
   }

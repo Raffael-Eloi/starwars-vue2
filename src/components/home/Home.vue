@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Header />
+    <Header :showMenu="showMenu" :showHiddenMenu="showHiddenMenu" />
+    <Menu v-show="smallScreenSize && showMenu"/>
     <div class="initial-message">
       <h1 class="center home-title">Welcome to the star wars info.</h1>
       <h1 class="center home-title">What do you want to see ?</h1>
@@ -41,23 +42,35 @@
 </template>
 
 <script>
-  import Header from '../shared/header/Header.vue';
-  import Footer from '../shared/footer/Footer.vue';
+
+import Header from '../shared/header/Header.vue';
+import Footer from '../shared/footer/Footer.vue';
+import Menu from '../shared/menu/Menu.vue';
+
 export default {
   data() {
     return {
-      starwarsMovies: []
+      smallScreenSize: false,
+      showMenu: false
     }
   },
+
   components: {
-    Header, Footer
+    Header, Footer, Menu
   },
-  // created() {
-  //     fetch('https://swapi.dev/api/films')
-  //     .then(response => response.json())
-  //     .then(data => this.starwarsMovies = data.results)
-  //   }
+
+  methods: {
+    showHiddenMenu() {
+      this.showMenu = !this.showMenu;
+    }
+  },
+
+  created() {
+    if (window.screen.width < 520) {
+      this.smallScreenSize = true;
+    }
   }
+}
 </script>
 
 <style scoped>
