@@ -30,10 +30,12 @@ export default {
   display: flex;
   list-style-type: none;
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .menu-list__item {
   margin-right: 1rem;
+  border-bottom: 2px solid #e6aa14;
 }
 
 </style>

@@ -89,7 +89,7 @@ export default {
 .about-body__list__image {
   margin-right: 0.5rem;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 800px) {
   .about-body {
     flex-direction: column;
     align-items: center;
@@ -100,12 +100,12 @@ export default {
   }
 
   .about-body__image {
-    height: 200px;
+    height: 185px;
     width: 180px;
   }
 }
 
-@media screen and (min-width: 550px) and (max-width: 920px) {
+@media screen and (min-width: 800px) and (max-width: 920px) {
   .about-body {
     align-items: center;
   }
@@ -133,8 +133,8 @@ export default {
   }
 
   .about-body__image {
-    height: 400px;
-    width: 320px;
+    height: 375px;
+    width: 360px;
   }
 }
 

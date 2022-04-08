@@ -35,6 +35,7 @@ export default {
 .back-to-home-body__button:hover {
   color: #f0f0f0;
   cursor: pointer;
+  box-shadow: 2px 2px 2px gray;
 }
 
 @media screen and (max-width: 550px) {

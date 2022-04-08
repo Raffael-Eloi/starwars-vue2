@@ -164,18 +164,17 @@ export default {
   border: 1px solid #e6aa14;
   background-color: #e6aa14;
   border-radius: 15px;
-  color: #f0f0f0;
   padding: 0.4rem;
   font-size: 1rem;
   font-weight: bold;
   transition: 600ms;
+  padding: 0.6rem 4rem;
 }
 
 .pagination__button:hover {
   cursor: pointer;
-  background-color: #b48306;
   box-shadow: 2px 2px 2px gray;
-  color: #333;
+  color: #f0f0f0;
 }
 
 @media screen and (min-width: 1200px) {

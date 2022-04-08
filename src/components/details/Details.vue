@@ -23,11 +23,11 @@
       </div>
       <div class="search-image">
         <a :href="getNameForSearch(name === 'films' ?  detailsData.title: detailsData.name)" target="_blank" class="search-image__link">
-        <div class="search-image__box">
-          <h4>Click here to see images of {{detailsData.name}}</h4>
-          <img src="https://img.icons8.com/color/36/000000/death-star.png"/>
-          <img src="https://img.icons8.com/fluency/36/000000/image.png"/>
-        </div>
+          <div class="search-image__box">
+            <h4>Click here to see images of {{name === 'films' ?  detailsData.title: detailsData.name}}</h4>
+            <img src="https://img.icons8.com/color/36/000000/death-star.png"/>
+            <img src="https://img.icons8.com/fluency/36/000000/image.png"/>
+          </div>
         </a>
       </div>
     </div>
@@ -98,7 +98,6 @@ export default {
     showValuesFormated(value, key) {
       if (typeof(value) === "string") {
         const array = [value];
-        console.log(array);
         this.getValuesFromUrlList(array, key);
 
       } else {
@@ -147,8 +146,9 @@ export default {
   align-items: center;
   justify-content: center;
   border: 2px solid #e6aa14;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  border-radius: 15px;
+  width: 50%;
+  margin: 1rem auto;
 }
 
 .search-image__link {
@@ -188,6 +188,7 @@ export default {
 @media screen and (max-width: 520px) {
   .search-image {
    background-color: #e6aa14;
+   width: 90%;
   }
 
   .search-image:hover {

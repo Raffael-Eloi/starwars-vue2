@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header :showMenu="showMenu" :showHiddenMenu="showHiddenMenu" />
-    <Menu v-show="smallScreenSize && showMenu"/>
+    <Transition name="slide-fade">
+      <Menu v-show="smallScreenSize && showMenu"/>
+    </Transition>
     <div class="initial-message">
       <h1 class="center home-title">Welcome to the star wars info.</h1>
       <h1 class="center home-title">What do you want to see ?</h1>
@@ -19,7 +21,7 @@
 
       <router-link :to="{name: 'information', params: {name: 'films'}}" class="router-link">
       <div class="films">
-        <img class="image-example" src="../../assets/images/film-example.jpg" alt="Ilustrative image of a filme in star wars with a lot of characters in the image">
+        <img class="image-example" src="https://prod-cdn-02.storenvy.com/product_photos/79307239/file_56190258f1_original.jpg" alt="Ilustrative image of a filme in star wars with a lot of characters in the image">
         <div class="description">
           <h3 class="center">Click anywhere inside this box to see all the movies in the Star wars</h3>
           <img class="image-ilustrative" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-movie-movie-theater-flaticons-lineal-color-flat-icons-7.png"/>
@@ -29,7 +31,7 @@
 
       <router-link :to="{name: 'information', params: {name: 'people'}}" class="router-link">
       <div class="characters">
-        <img class="image-example" src="../../assets/images/character-example.jpg" alt="Ilustrative image of the character Darth Vader">
+        <img class="image-example" src="https://w0.peakpx.com/wallpaper/548/261/HD-wallpaper-darth-vader-star-wars-movies-darth-vader-artwork-artstation.jpg" alt="Ilustrative image of the character Darth Vader">
         <div class="description">
           <h3 class="center">Click anywhere inside this box to see all the characters in the Star wars</h3>
           <img class="image-ilustrative" src="https://img.icons8.com/color/64/000000/r2-d2.png"/>
@@ -73,8 +75,22 @@ export default {
 
 <style scoped>
 .list-options img {
-    border-radius: 60%;
+    border-radius: 100%;
   }
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
 
 @media screen and (max-width: 520px) {
   .home-title {
@@ -106,7 +122,7 @@ export default {
   }
   
   .image-example {
-    height: 100%;
+    height: 80%;
     width: 50%;
   }
 
@@ -143,7 +159,7 @@ export default {
   }
   
   .image-example {
-    height: 100%;
+    height: 80%;
     width: 50%;
   }
 
@@ -179,6 +195,11 @@ export default {
     height: 65vh;
   }
 
+  .image-example {
+    height: 80%;
+    width: 55%;
+  }
+
   .image-example:hover {
     transition: 600ms;
     opacity: 0.3;
@@ -212,12 +233,12 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 62vh;
+    height: 63.5vh;
   }
 
   .image-example {
-    height: 100%;
-    width: 65%;
+    height: 85%;
+    width: 70%;
   }
 
   .image-example:hover {
