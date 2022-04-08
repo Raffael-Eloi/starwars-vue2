@@ -1,5 +1,5 @@
 # <img src="https://img.icons8.com/color/40/000000/star-wars.png"/> Star Wars with Vue.js <img src="https://img.icons8.com/color/40/000000/star-wars.png"/>
-Hey, are you a Star Wars fan ? If yes you'll problably enjoy this application. <br>
+Hey, are you a Star Wars fan ? If yes you'll probably enjoy this application. <br>
 In this application you can see the planets, movies, characters of the Star Wars saga and to know all the details.
 
 # <img src="https://img.icons8.com/color/40/000000/goal--v1.png"/> Goal
