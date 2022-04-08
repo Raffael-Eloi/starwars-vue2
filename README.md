@@ -1,8 +1,34 @@
-# starwars-vue2
+# <img src="https://img.icons8.com/color/40/000000/star-wars.png"/> Star Wars with Vue.js <img src="https://img.icons8.com/color/40/000000/star-wars.png"/>
+Hey, are you a Star Wars fan ? If yes you problably will enjoy this application. <br>
+In this application you can see the planets, movies, characters of the Star Wars saga.
 
-> A Vue.js project
+# <img src="https://img.icons8.com/color/40/000000/goal--v1.png"/> Goal
+The main goal was to practise my skills in Vue.js and to consume a public API to use the resources of the framework.
 
-## Build Setup
+# Result 
+You can access the application <a href="https://starwars-vue2.vercel.app/" target="_blank">here</a> <br>
+<img src="https://img.icons8.com/color/48/000000/yoda.png"/> __ "To click in this link you should"
+
+# Resources Utilizeds
+## <img src="https://img.icons8.com/color/40/000000/css3.png"/> CSS
+- [x] CSS Selectors
+- [x] Media query
+- [x] Methodology BEM (Block - Element - Model)
+- [x] Atomic Design
+- [x] Flexbox
+
+## <img src="https://img.icons8.com/color/40/000000/javascript--v1.png"/> JavaScript
+- [x] Functions ECMAScript 6 
+- [x] Fetch API
+
+## <img src="https://img.icons8.com/color/40/000000/vue-js.png"/> Vue
+- [x] Single Page Application
+- [x] Methods
+- [x] Props
+- [x] Vue router
+- [x] Componentization
+
+## <img src="https://img.icons8.com/emoji/40/000000/laptop-emoji.png"/> Build Setup
 
 ``` bash
 # install dependencies
