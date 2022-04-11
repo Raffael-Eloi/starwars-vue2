@@ -11,7 +11,7 @@
         For the API of the project I used the website <a href="https://swapi.dev/" target="_blank">swapi dev</a>.
       </h4>
       <div class="credits-body__image">
-        <img src="https://img.icons8.com/external-line-rakhmat-setiawan/100/000000/external-communication-thanksgiving-line-line-rakhmat-setiawan.png"/>
+        <img src="../../assets/images/thankyou.png" alt="Image of a plate with the message 'thank you'"/>
       </div>
     </div>
     <BackToHome />

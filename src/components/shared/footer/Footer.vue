@@ -3,13 +3,13 @@
     <h4 class="author">Made by Raffael Eloi</h4>
     <div class="social-media">
       <a href="https://github.com/Raffael-Eloi" target="_blank">
-        <img class="social-media__image" src="https://img.icons8.com/ios-filled/35/000000/github.png"/>
+        <img class="social-media__image" src="../../../assets/images/github.png" alt="GitHub logo"/>
       </a>
       <a href="https://www.linkedin.com/in/raffael-eloi/" target="_blank">
-        <img class="social-media__image" src="https://img.icons8.com/fluency/36/000000/linkedin.png"/>
+        <img class="social-media__image" src="../../../assets/images/linkedin.png" alt="Linkedin logo"/>
       </a>
       <a href="mailto:raffaeleloi121@gmail.com" target="_blank">
-        <img class="social-media__image" src="https://img.icons8.com/fluency/36/000000/gmail.png"/>
+        <img class="social-media__image" src="../../../assets/images/gmail.png" alt="Gmail logo"/>
       </a>
     </div>
   </footer>
@@ -28,7 +28,7 @@ export default {
   justify-content: space-around;
   box-shadow: 0px 3px 3px 1px gray;
   padding: 1.5rem;
-  background-image: url(https://olhardigital.com.br/wp-content/uploads/2021/02/star-wars.jpg);
+  background-image: url(../../../assets/images/footer.jpg);
   background-position: center;
   background-size: cover;
   color: white;

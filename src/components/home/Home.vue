@@ -11,30 +11,30 @@
     <div class="list-options">
       <router-link :to="{name: 'information', params: {name: 'planets'}}" class="router-link">
       <div class="planets">
-        <img class="image-example" src="../../assets/images/planet-example.jpg" alt="Ilustrative image of a planet in star wars - the planet ilustrated is tatooine">
+        <img class="image-example" src="../../assets/images/planet-example.jpg" alt="Illustrative image of a planet in star wars, the planet illustrated is tatooine">
         <div class="description">
           <h3 class="center">Click anywhere inside this box to see all the planets in the Star wars</h3>
-          <img class="image-ilustrative" src="https://img.icons8.com/cotton/64/000000/mars-planet.png"/>
+          <img class="image-ilustrative" src="../../assets/images/mars-planet.png" alt="illustrative image of a normal planet, the planet illustrated is mars"/>
         </div>
       </div>
       </router-link>
 
       <router-link :to="{name: 'information', params: {name: 'films'}}" class="router-link">
       <div class="films">
-        <img class="image-example" src="https://prod-cdn-02.storenvy.com/product_photos/79307239/file_56190258f1_original.jpg" alt="Ilustrative image of a filme in star wars with a lot of characters in the image">
+        <img class="image-example" src="../../assets/images/starwars.jpg" alt="Illustrative image of star wars logo">
         <div class="description">
           <h3 class="center">Click anywhere inside this box to see all the movies in the Star wars</h3>
-          <img class="image-ilustrative" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-movie-movie-theater-flaticons-lineal-color-flat-icons-7.png"/>
+          <img class="image-ilustrative" src="../../assets/images/movie.png" alt="illustrated image of a movie icon, the icon is used in production of theather scenes" />
         </div>
       </div>
       </router-link>
 
       <router-link :to="{name: 'information', params: {name: 'people'}}" class="router-link">
       <div class="characters">
-        <img class="image-example" src="https://w0.peakpx.com/wallpaper/548/261/HD-wallpaper-darth-vader-star-wars-movies-darth-vader-artwork-artstation.jpg" alt="Ilustrative image of the character Darth Vader">
+        <img class="image-example" src="../../assets/images/ilustrative-image-character.jpg" alt="Illustrative image of the character Darth Vader holding a light saber with his army of stormtroopers behind him">
         <div class="description">
           <h3 class="center">Click anywhere inside this box to see all the characters in the Star wars</h3>
-          <img class="image-ilustrative" src="https://img.icons8.com/color/64/000000/r2-d2.png"/>
+          <img class="image-ilustrative" src="../../assets/images/r2-d2.png" alt="illustrative image of a star wars character, the chararcter illustrated is R2-d2 "/>
         </div>
       </div>
       </router-link>

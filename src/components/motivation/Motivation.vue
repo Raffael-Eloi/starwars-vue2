@@ -9,8 +9,8 @@
         The initial idea was just build an application that I could use an existent API to list things and to use methods, components, and resources of the Vue.js and resources os css like reponsiviness, position, flexbox, alignment and others.<br />
       </h4>
       <div class="credits-body__image">
-        <img class="credits-body__image__item" src="https://img.icons8.com/fluency/150/000000/laptop-coding.png"/>
-        <img class="credits-body__image__item" src="https://img.icons8.com/color/100/000000/vue-js.png"/>
+        <img class="credits-body__image__item" src="../../assets/images/laptop-coding.png" alt="image of a laptop with a blue screen of a html closed tag"/>
+        <img class="credits-body__image__item" src="../../assets/images/vue-js.png" alt="Logo of the framework Vue.js"/>
       </div>
     </div>
     <BackToHome />
